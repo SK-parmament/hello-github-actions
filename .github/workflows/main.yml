@@ -2,7 +2,7 @@
 name: Hello GitHub Actions
 # トリガーとなるイベントを定義（mainブランチへプッシュ）
 on: 
-  pus:
+  push:
     branches:
 	  - 'main'
 # ジョブの追加（最新バージョンのubuntuの上でビルドを実行）
