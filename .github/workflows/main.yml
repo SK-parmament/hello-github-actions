@@ -1,17 +1,17 @@
 # ワークフロー名を定義
 name: Hello GitHub Actions
 # トリガーとなるイベントを定義（mainブランチへプッシュ）
-on: 
+on:
   push:
     branches:
-	  - 'main'
+      - 'main'
 # ジョブの追加（最新バージョンのubuntuの上でビルドを実行）
 jobs:
   build:
     runs-on: ubuntu-latest
 
-	steps:
-	  - uses: actions/checkout@v3
+    steps:
+      - uses: actions/checkout@v3
 
-	  - name: Run a one-lice script
-	    run: echo Hello GitHub Actions!!
+      - name: Run a one-lice script
+        run: echo Hello GitHub Actions!!
