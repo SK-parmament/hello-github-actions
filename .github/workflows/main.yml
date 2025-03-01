@@ -32,6 +32,5 @@ jobs:
     - name: Publish distribution to Test PyPI
       uses: pypa/gh-action-pypi-publish@release/v1
       with:
-        attestations: true
         repository-url: https://test.pypi.org/legacy/
 
