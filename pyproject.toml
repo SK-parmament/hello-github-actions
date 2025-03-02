@@ -22,3 +22,5 @@ classifiers = [
 [project.urls]
 "Homepage" = "https://github.com/pypa/sampleproject"
 "Bug Tracker" = "https://github.com/pypa/sampleproject/issues"
+[tool.hatch.build.targets.wheel]
+packages = ["example_package_SK"]
