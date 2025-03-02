@@ -1,20 +1,21 @@
-# ベースイメージの指定
+# ベースイメージ
 FROM python:3.10
 
-# ワーキングディレクトリの作成
-RUN mkdir /code
-
-# ワーキングディレクトリの設定
+# ワーキングディレクトリを作成
 WORKDIR /code
 
-# カレントディレクトリ配下のファイルをワーキングディレクトリに追加
-ADD . /code
+# 必要なファイルをコピー
+COPY requirements.txt /code/
+COPY . /code/
 
-# 8000番ポートでリッスン
-EXPOSE 8000
+# pip を最新化
+RUN pip install --upgrade pip setuptools wheel
 
-# 必要なパッケージのインストール
+# 依存関係をインストール
 RUN pip install -r requirements.txt
 
-# 起動コマンド
-CMD python manage.py runserver 0.0.0.0:8000
+# 8000 番ポートを開放
+EXPOSE 8000
+
+# CMD を JSON 形式で指定（Docker の警告を防ぐ）
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
